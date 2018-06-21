@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <script>
+        // nodejs compatibility shim
+        module = {}
+        global = window
+    </script>
+    <script src='guess-core.js'></script>
+</head>
+
+<body>
+
+    <button id='higher' onclick='higher()'>Higher</button>
+    <button id='higher' onclick='lower()'>Lower</button>
+    <button id='higher' onclick='correct()'>Correct!</button>
+
+    <script>
+        function say(message) {
+            console.log(message);
+        }
+        function higher() {
+            handleInput('H')
+        }
+        function lower() {
+            handleInput('L')
+        }
+        function correct() {
+            handleInput('C')
+        }
+
+        start();
+
+    </script>
+</body>
+
+</html>
