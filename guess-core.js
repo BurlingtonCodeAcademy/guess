@@ -4,7 +4,9 @@ let lastGuess = originalRandomNumber;
 let maxGuess = 100;
 let minGuess = 1;
 
-makeGuess(originalRandomNumber);
+function start() {
+    makeGuess(originalRandomNumber);
+}
 
 function makeGuess(guess) {
     say('Is your number ' + guess + '?');
@@ -34,4 +36,9 @@ function handleInput(input) {
 
 function getRandomInt(min, max) {
     return min + Math.floor(Math.random() * (max-min));
+}
+
+module.exports = {
+    handleInput: handleInput,
+    start: start
 }
