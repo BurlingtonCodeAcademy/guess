@@ -1,11 +1,26 @@
 <!doctype html>
 <html>
-  <head>
-    <script src="guess.js"></script>
-  </head>
-  <body>
-    <button onClick="handleInput('H')">Higher</button>
-    <button onClick="handleInput('L')">Lower</button>
-    <button onClick="handleInput('C')">Correct</button>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="guess.js"></script>
+</head>
+
+<body>
+  <div id="message">
+    <p>
+      I, the computer, will guess any whole integer number between 1 and 100.<br/> You can tell me H to say the number is higher than my guess.<br/> You can tell me L to say the number is lower than my guess.<br/> You can tell me I was correct by entering C.
+    </p>
+  </div>
+  <div id="output">
+    <p></p>
+  </div>
+  <button onClick="handleInput('H')">Higher</button>
+  <button onClick="handleInput('L')">Lower</button>
+  <button onClick="handleInput('C')">Correct</button>
+</body>
+<script>
+  say('\nIs your number ' + originalRandomNumber + '?');
+</script>
+
 </html>
