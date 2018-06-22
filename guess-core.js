@@ -1,10 +1,16 @@
-// CORE STUFF
-let originalRandomNumber = getRandomInt(1, 100);
-let lastGuess = originalRandomNumber;
-let maxGuess = 100;
-let minGuess = 1;
+
+let originalRandomNumber;
+let lastGuess;
+let maxGuess;
+let minGuess;
 
 function start() {
+    originalRandomNumber = getRandomInt(1, 100);
+    say("Please think of a number between 1 and 100.")
+
+    lastGuess = originalRandomNumber;
+    maxGuess = 100;
+    minGuess = 1;
     makeGuess(originalRandomNumber);
 }
 
@@ -40,5 +46,6 @@ function getRandomInt(min, max) {
 
 module.exports = {
     handleInput: handleInput,
+    getRandomInt: getRandomInt,
     start: start
 }

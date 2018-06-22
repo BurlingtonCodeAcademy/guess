@@ -4,34 +4,46 @@
     <script>
         // nodejs compatibility shim
         module = {}
-        global = window
     </script>
     <script src='guess-core.js'></script>
 </head>
 
 <body>
+    <h1>Guess a number!</h1>
 
-    <button id='higher' onclick='higher()'>Higher</button>
-    <button id='higher' onclick='lower()'>Lower</button>
-    <button id='higher' onclick='correct()'>Correct!</button>
+    <button onclick="handleInput('H')">Higher</button>
+    <button onclick="handleInput('C')">Correct!</button>
+    <button onclick="handleInput('L')">Lower</button>
+
+    <button onclick="restart()">New Game</button>
+
+    <h3>Output:</h3>
+    <pre id='output'>
+
+    </pre>
 
     <script>
         function say(message) {
-            console.log(message);
+            document.getElementById('output').textContent += '\n' + message;
+        }       
+
+        function exit() {
+            console.log('exit called')
+            setTimeout(restart, 2000);
         }
-        function higher() {
-            handleInput('H')
+
+        function clear() {
+            document.getElementById('output').textContent = '';
         }
-        function lower() {
-            handleInput('L')
-        }
-        function correct() {
-            handleInput('C')
+
+        function restart() {
+            clear();
+            start();
         }
 
         start();
-
     </script>
+
 </body>
 
 </html>
