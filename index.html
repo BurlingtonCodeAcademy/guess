@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src='guess.js'></script>
+</head>
+
+<body>
+    <h1>Guess a number!</h1>
+
+    <h3>Input:</h3>
+    <input name='input' id='inputField' type='text'>
+    <button id='enterButton'>Enter</button>
+
+    <h3>Output:</h3>
+    <pre id='output'>
+
+    </pre>
+
+    <script>
+        function say(message) {
+            document.getElementById('output').textContent += '\n' + message;
+        }       
+        function endGame() {
+            setTimeout(startGame, 2000);
+        }
+
+        function handleInput() {
+            let inputElement = document.getElementById('inputField')
+            let inputString = inputElement.value
+            processUserInput(inputString)
+        }
+
+        let enterButton = document.getElementById('enterButton')
+        // enterButton.onclick = handleInput
+        enterButton.addEventListener('click', handleInput);
+
+        startGame();
+    </script>
+
+</body>
+
+</html>
